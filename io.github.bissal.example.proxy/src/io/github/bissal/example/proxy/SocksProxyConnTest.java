@@ -38,7 +38,7 @@ public class SocksProxyConnTest {
 			writer.flush();
 
 			String line;
-			while((line = reader.readLine()) != null){
+			while ((line = reader.readLine()) != null) {
 				System.out.println(line + "\n");
 			}
 
@@ -61,9 +61,9 @@ public class SocksProxyConnTest {
 
 	public static void main(String[] args) {
 		Properties prop = loadProperties();
-		String destIp = prop.getProperty("dest.ip");
-		String destPort = prop.getProperty("dest.port");
-		String proxyIp = prop.getProperty("proxy.ip");
+		String destIp	 = prop.getProperty("dest.ip");
+		String destPort	 = prop.getProperty("dest.port");
+		String proxyIp	 = prop.getProperty("proxy.ip");
 		String proxyPort = prop.getProperty("proxy.port");
 
 		testConnect(destIp, Integer.parseInt(destPort), proxyIp, Integer.parseInt(proxyPort));
