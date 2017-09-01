@@ -33,9 +33,9 @@ public class SocksProxyConnTest {
 
 			reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            
-            writer.write("Hellllllooooooooo:");
-            writer.flush();
+
+			writer.write("Hellllllooooooooo:");
+			writer.flush();
 
 			String line;
 			while((line = reader.readLine()) != null){
@@ -65,7 +65,7 @@ public class SocksProxyConnTest {
 		String destPort = prop.getProperty("dest.port");
 		String proxyIp = prop.getProperty("proxy.ip");
 		String proxyPort = prop.getProperty("proxy.port");
-		
+
 		testConnect(destIp, Integer.parseInt(destPort), proxyIp, Integer.parseInt(proxyPort));
 	}
 
@@ -78,9 +78,9 @@ public class SocksProxyConnTest {
 			input = new FileInputStream("config.properties");
 
 			prop.load(input);
-			
+
 			Set<Entry<Object, Object>> entrySet = prop.entrySet();
-			
+
 			for (Entry<Object, Object> entry : entrySet) {
 				System.out.println(entry);
 			}
@@ -96,7 +96,7 @@ public class SocksProxyConnTest {
 				}
 			}
 		}
-		
+
 		return prop;
 	}
 }
