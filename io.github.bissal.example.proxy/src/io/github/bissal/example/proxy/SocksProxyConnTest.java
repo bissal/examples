@@ -17,7 +17,7 @@ import java.util.Properties;
 import java.util.Set;
 
 public class SocksProxyConnTest {
-
+	
 	public static void testConnect(String destIp, int destPort, String proxyIp, int proxyPort) {
 		BufferedReader reader = null;
 		BufferedWriter writer = null;
@@ -60,7 +60,7 @@ public class SocksProxyConnTest {
 	}
 
 	public static void main(String[] args) {
-		Properties prop = loadProperties();
+		Properties prop	 = loadProperties();
 		String destIp	 = prop.getProperty("dest.ip");
 		String destPort	 = prop.getProperty("dest.port");
 		String proxyIp	 = prop.getProperty("proxy.ip");
@@ -74,17 +74,13 @@ public class SocksProxyConnTest {
 		InputStream input = null;
 
 		try {
-
 			input = new FileInputStream("config.properties");
-
 			prop.load(input);
 
 			Set<Entry<Object, Object>> entrySet = prop.entrySet();
-
 			for (Entry<Object, Object> entry : entrySet) {
 				System.out.println(entry);
 			}
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -96,7 +92,6 @@ public class SocksProxyConnTest {
 				}
 			}
 		}
-
 		return prop;
 	}
 }
